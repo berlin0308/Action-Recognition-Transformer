@@ -6,8 +6,8 @@ from moviepy import *
 import numpy as np
 
 # crop params
-start_point = (10, 280)
-end_point = (640, 480)
+start_point = (20, 20)
+end_point = (640, 280)
 size = 224
 angle = -2
 
@@ -46,5 +46,6 @@ def view_crop_rotate(mp4_file_path, mp4_output):
     final_clip = ImageSequenceClip(images, fps=10)
     final_clip.write_videofile(mp4_output, codec='libx264')
 
-view_crop_rotate('E:\DATA_ALL\\Dataset_LongTerm\\20231209_OP_full\\20231209-00-00-03.mp4',"aaaab.mp4")
+view_crop_rotate('/Volumes/BERLIN_SSD/DATA_ALL/Dataset_LongTerm/20231212_OP_full/20231212-00-08-03.mp4'
+                 ,"data_prep/aaaab.mp4")
 
