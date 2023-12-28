@@ -66,13 +66,13 @@ def write_statistics_csv(input_files, output_path):
 
 if __name__ == "__main__":
 
-    csv_file_path = "inf_day_20231103.csv"
+    csv_file_path = "daily_assess/1112.csv"
     # csv_file_path = "inf_day_2023" + date + ".csv"
     df = pd.read_csv(csv_file_path, delimiter=',', encoding='utf-8')
 
     occurs, bouts, ADPBs = analyze_csv(df)
     print(occurs, bouts, ADPBs)
 
-    input_files = ["inf_day_20231103.csv","inf_day_20231112.csv"]
+    input_files = ["daily_assess/1112.csv","daily_assess/1103.csv"]
     write_statistics_csv(input_files, "output.csv")
 

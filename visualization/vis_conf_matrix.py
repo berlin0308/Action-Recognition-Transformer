@@ -32,10 +32,9 @@ filename: A confusion matrix txt of the inference result ( modified classes )
 """
 if __name__ == '__main__':
 
-    # filename = '1103_day_matrix.txt'
-    # filename = '1112_day_matrix.txt'
-    # filename = '1112_day_matrix.txt'
-    filename = 'test_J_matrix.txt'
+    title = ['test_J_matrix','1103_matrix','1112_matrix'][1]
+
+    filename = f'visualization/{title}.txt'
 
     loaded_matrix = load_matrix_from_txt(filename)
     print(loaded_matrix)
@@ -81,12 +80,13 @@ if __name__ == '__main__':
             else:
                 plt.text(j, i, str(format(round(conf_matrix[i][j],4)*100 ,'.2f')), ha='center', va='center', color='black', fontsize=12)
 
+    plt.savefig(f'visualization/{title}_precent_V9.png', format='png')
     plt.show()
-    plt.savefig('confusion_matrix_V8.png', format='png')
 
 
-    
-    plt.figure(figsize=(10, 8))
+    num_classes = 8
+
+    plt.figure(figsize=(10, 10))
     plt.imshow(loaded_matrix, cmap='Greys')
     plt.title('Confusion Matrix')
     # plt.colorbar(shrink=0.9)
@@ -103,4 +103,5 @@ if __name__ == '__main__':
             else:
                 plt.text(j, i, str(loaded_matrix[i][j]), ha='center', va='center', color='black', fontsize=12)
 
+    plt.savefig(f'visualization/{title}_all_V9.png', format='png')
     plt.show()
